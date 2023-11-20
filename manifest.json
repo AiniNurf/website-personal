@@ -1,7 +1,7 @@
 {
   "name": "App Laundry sederhana",
-  "short_name": "kalkulator",
-  "description": "Membuat Aplikasi Kalkulator sederhana dengan javascript PWA",
+  "short_name": "Laundry",
+  "description": "Membuat Aplikasi Laundry sederhana dengan javascript PWA",
   "icons": [
     {
       "src": "assets/images/laundry-192.png",
@@ -14,7 +14,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "home.html",
+ 
+  "start url": "home.html",
   "display": "standalone",
   "theme_color": "#1F3641",
   "background_color": "#ffffff",
