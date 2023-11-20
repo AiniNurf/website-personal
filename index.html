@@ -17,18 +17,18 @@
 
   
   <form id="crudForm">
-    <label for="nama">Nama Barang:</label>
+    <label for="nama"> Jenis Barang:</label>
     <input type="text" id="nama" required>
-    <label for="harga">Harga :</label>
+    <label for="harga">Taruf :</label>
     <input type="number" id="harga" required>
     <button type="button" id="addBtn">Tambah Produk</button>
   </form>
   <table id="grosirTable">
     <thead>
       <tr>
-        <th style="text-align: center;">Nama</th>
-        <th style="text-align: center;">Harga</th>
-        <th style="text-align: center;">Aksi</th>
+        <th style="text-align: center;">Jenis Barang</th>
+        <th style="text-align: center;">Tarif</th>
+        <th style="text-align: center;"> </th>
       </tr>
     </thead>
     <tbody>
@@ -38,7 +38,7 @@
   </table>
   <h2 style="text-align: center;">Payment</h2>
   <form id="paymentForm">
-    <label for="total">Total Harga:</label>
+    <label for="total">Total Bayar:</label>
     <input type="text" id="total" readonly>
     <label for="bayar">Ketik sesuai jumlah baris yang akan dihitung:</label>
     <input type="number" id="bayar" required>
