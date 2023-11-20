@@ -1,7 +1,7 @@
 {
   "name": "App Laundry sederhana",
   "short_name": "Laundry",
-  "description": "Membuat Aplikasi Laundry sederhana dengan javascript PWA",
+  "description": "Membuat Aplikasi lAUNDRY sederhana dengan javascript PWA",
   "icons": [
     {
       "src": "assets/images/laundry-192.png",
