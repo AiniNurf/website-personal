@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Laundry Aini</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrinkto-fit=no" />
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+</head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+      background-color: #b16262;
+    }
+
+    h1 {
+      color: #e9edf1;
+    }
+
+    #connectButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #b11040;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selamat Datang di Aini Laundry</h1>
+  <p>Silakan tekan tombol di bawah untuk terhubung ke file lain.</p>
+
+  <button id="connectButton">Lanjutkan Transaksi</button>
+
+  <script>
+    // Fungsi yang akan dipanggil saat tombol ditekan
+    function connectToOtherFile() {
+      // Ganti 'nama_file_lain.html' dengan nama file yang ingin Anda tuju
+      window.location.href = 'index.html';
+    }
+
+    // Menambahkan event listener untuk tombol
+    document.getElementById('connectButton').addEventListener('click', connectToOtherFile);
+  </script>
+</body>
+<script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/register.js"></script>
+</body>
+</html>

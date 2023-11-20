@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Laundry Aini</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrinkto-fit=no" />
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles1.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <h2 style="text-align: center;">Transaksi</h2>
+
+    <form id="paymentForm">
+        <label for="Name">Nama Pelanggan:</label>
+        <input type="text" id="Name" required>
+
+        <label for="itemName">Nama Barang:</label>
+        <input type="text" id="itemName" required>
+
+        <label for="itemPrice">Harga Barang:</label>
+        <input type="number" id="itemPrice" required>
+
+        <label for="quantity">Jumlah Barang:</label>
+        <input type="number" id="quantity" required>
+
+        <button type="button" onclick="calculateTotal()">Hitung Total</button>
+    </form>
+
+    <div id="receipt">
+        <style>  </style>
+        <h2 style="text-align: center; color: aliceblue; font-style: italic;">AINI LAUNDRY</h2>
+        <p style="text-align: center;"><strong>Nama Pelanggan:</strong> <span id="NameOutput"></span></p>
+        <p><strong style="text-align: center;">Nama Barang:</strong> <span id="itemNameOutput"></span></p>
+        <p><strong style="text-align: center;">Harga Barang:</strong> Rp <span id="itemPriceOutput"></span></p>
+        <p><strong style="text-align: center;">Jumlah Barang:</strong> <span id="quantityOutput"></span></p>
+        <p><strong style="text-align: center;">Total Pembayaran:</strong> Rp <span id="totalOutput"></span></p>
+    </div>
+
+    <button onclick="printReceipt()">Cetak Struk</button>
+
+    <script>
+        function calculateTotal() {
+            var Name = document.getElementById("Name").value;
+            var itemName = document.getElementById("itemName").value;
+            var itemPrice = parseFloat(document.getElementById("itemPrice").value);
+            var quantity = parseInt(document.getElementById("quantity").value);
+
+            var total = itemPrice * quantity;
+            document.getElementById("NameOutput").innerText = Name;
+            document.getElementById("itemNameOutput").innerText = itemName;
+            document.getElementById("itemPriceOutput").innerText = itemPrice.toFixed(2);
+            document.getElementById("quantityOutput").innerText = quantity;
+            document.getElementById("totalOutput").innerText = total.toFixed(2);
+
+            document.getElementById("receipt").style.display = "block";
+            
+        }
+
+        function printReceipt() {
+            var receiptContent = document.getElementById("receipt").innerHTML;
+            var originalContent = document.body.innerHTML;
+
+            document.body.innerHTML = receiptContent;
+
+            window.print();
+
+            document.body.innerHTML = originalContent;
+            document.getElementById("receipt").style.display = "none";
+        }
+    </script>
+</body>
+  </main>
+  <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/register.js"></script>
+</body>
+
+</html>

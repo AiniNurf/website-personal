@@ -1,0 +1,78 @@
+
+body {
+    background-color: #b16262;
+    background-image: url(bc.jpeg);
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: hsl(0, 69%, 79%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid #ddd;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  form {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #d87e7e;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #520b0b;
+    border-radius: 5px;
+  }
+
+  button {
+    background-color: #4d1803;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #1f76d0;
+  }
+
+  #paymentForm {
+    margin-top: 20px;
+  }
+
+  #paymentForm label,
+  #paymentForm input {
+    display: block;
+    margin-bottom: 10px;
+  }

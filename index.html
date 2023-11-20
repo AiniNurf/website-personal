@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Laundry Aini</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrinkto-fit=no" />
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <h1 style="text-align: center; ">AINI LAUNDRY</h1>
+
+  
+  <form id="crudForm">
+    <label for="nama">Nama Barang:</label>
+    <input type="text" id="nama" required>
+    <label for="harga">Harga :</label>
+    <input type="number" id="harga" required>
+    <button type="button" id="addBtn">Tambah Produk</button>
+  </form>
+  <table id="grosirTable">
+    <thead>
+      <tr>
+        <th style="text-align: center;">Nama</th>
+        <th style="text-align: center;">Harga</th>
+        <th style="text-align: center;">Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <h2 style="text-align: center;">Tarif Laundry</h2>  
+      <!-- Data grosir akan ditampilkan di sini -->
+    </tbody>
+  </table>
+  <h2 style="text-align: center;">Payment</h2>
+  <form id="paymentForm">
+    <label for="total">Total Harga:</label>
+    <input type="text" id="total" readonly>
+    <label for="bayar">Ketik sesuai jumlah baris yang akan dihitung:</label>
+    <input type="number" id="bayar" required>
+    <button style="text-align: center;" type="button" id="bayarBtn">Hitung</button>
+  </form>
+  <script>
+    const crudForm = document.getElementById('crudForm');
+    const grosirTable = document.getElementById('grosirTable');
+    const paymentForm = document.getElementById('paymentForm');
+    const totalInput = document.getElementById('total');
+    const bayarInput = document.getElementById('bayar');
+    const addBtn = document.getElementById('addBtn');
+    const bayarBtn = document.getElementById('bayarBtn');
+    addBtn.addEventListener('click', function () {
+      const nama = document.getElementById('nama').value;
+      const harga = document.getElementById('harga').value;
+      if (nama && harga) {
+        const row = grosirTable.insertRow(1);
+        const cell1 = row.insertCell(0);
+        const cell2 = row.insertCell(1);
+        const cell3 = row.insertCell(2);
+        cell1.innerHTML = nama;
+        cell2.innerHTML = harga;
+        cell3.innerHTML = '<button onclick="editRow(this)">Edit</button> | <button onclick="deleteRow(this)">Hapus</button>';
+      }
+      crudForm.reset();
+    });
+    function editRow(btn) {
+      const row = btn.parentNode.parentNode;
+      const cells = row.cells;
+      document.getElementById('nama').value = cells[0].innerHTML;
+      document.getElementById('harga').value = cells[1].innerHTML;
+      row.parentNode.removeChild(row);
+    }
+    function deleteRow(btn) {
+      const row = btn.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+    bayarBtn.addEventListener('click', function () {
+      const rows = grosirTable.getElementsByTagName('tr');
+      let total = 0;
+      for (let i = 1; i < rows.length; i++) {
+        const harga = parseFloat(rows[i].cells[1].innerHTML);
+        total += harga;
+      }
+      totalInput.value = total;
+    });
+  </script>
+  <button id="connectButton">Cetak Struk</button>
+
+  <script>
+    // Fungsi yang akan dipanggil saat tombol ditekan
+    function connectToOtherFile() {
+      // Ganti 'nama_file_lain.html' dengan nama file yang ingin Anda tuju
+      window.location.href = 'index1.html';
+    }
+
+    // Menambahkan event listener untuk tombol
+    document.getElementById('connectButton').addEventListener('click', connectToOtherFile);
+  </script>
+</body>
+  </main>
+  <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/register.js"></script>
+</body>
+
+</html>
